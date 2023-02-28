@@ -49,11 +49,10 @@ class Model():
         # input = tf.keras.layers.Input(input_shape)
 
         # x = tf.keras.layers.Conv2D(24, kernel_size=1)
-        x = tf.keras.layers.Conv2D(400, kernel_size=3, strides=(2, 2), padding='same', use_bias=True)(x)
+        x = tf.keras.layers.Conv2D(400, kernel_size=1, strides=(1, 1), padding='same', use_bias=True)(x)
         x = tf.keras.layers.BatchNormalization()(x)
         x = tf.keras.layers.ReLU()(x)
-
-        # x = tf.keras.layers.MaxPool2D(pool_size=(3, 3), strides=2, padding='same')(x)
+        x = tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=2, padding='same')(x)
 
         repetitions = [7, 3]
 
